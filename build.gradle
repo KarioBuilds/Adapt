@@ -282,7 +282,7 @@ task specialSourceRemap(type: JavaExec)
     ]
 }
 
-tasks.compileJava.dependsOn(executeBuildTools)
+tasks.compileJava
 
 java {
     toolchain {
@@ -297,7 +297,7 @@ compileJava {
 task setup()
 {
     group("adapt")
-    dependsOn(clean, executeBuildTools)
+    // dependsOn(clean, executeBuildTools)
 }
 
 task adapt(type: Copy)
@@ -308,7 +308,7 @@ task adapt(type: Copy)
     rename { String fileName ->
         fileName.replace('Adapt-' + version + '-rma.jar', "Adapt-" + version + ".jar")
     }
-    dependsOn(specialSourceRemap)
+    // dependsOn(specialSourceRemap)
 }
 
 def registerCustomOutputTask(name, path) {
