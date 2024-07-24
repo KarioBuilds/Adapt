@@ -309,7 +309,7 @@ task adapt(type: Copy)
     rename { String fileName ->
         fileName.replace('Adapt-' + version + '-rma.jar', "Adapt-" + version + ".jar")
     }
-    dependsOn(specialSourceRemap)
+    // dependsOn(specialSourceRemap)
 }
 
 def registerCustomOutputTask(name, path) {
